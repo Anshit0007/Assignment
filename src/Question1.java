@@ -1,15 +1,20 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+import java.util.*;
 public class Question1 {
-    public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+    static String firstName;
+    static String lastName;
+    static int age = 30;
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
-        }
+    static {
+        firstName = "Anshit";
+        System.out.println("First Name from static block: " + firstName);
     }
+
+    static void printLastName() {
+        lastName = "Kumar";
+        System.out.println("Last Name from static method: " + lastName);
+    }
+    public static void main(String[] args) {
+        printLastName();
+        System.out.println("Age from static variable: " + age);
+        }
 }
