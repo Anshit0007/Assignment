@@ -1,4 +1,4 @@
-package Introduction_to_java_2;
+package Introduction_to_java_2; 
 enum HouseType {
     VILLA(5000000),
     APARTMENT(2000000),
@@ -7,12 +7,12 @@ enum HouseType {
 
     private final int price;
 
-    // Constructor
+    
     HouseType(int price) {
         this.price = price;
     }
 
-    // Getter method
+
     public int getPrice() {
         return price;
     }
