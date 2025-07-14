@@ -109,7 +109,7 @@ public class Question6 {
         Bank sbi = new SBI();
         Bank boi = new BOI();
         Bank icici = new ICICI();
-       // System.out.println(icici.toString());
+        System.out.println(icici.toString());
         //System.out.println(icici.getFdInterestRate());
 
       //  System.out.println(sbi);
