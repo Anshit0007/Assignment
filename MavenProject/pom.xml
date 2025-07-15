@@ -1,0 +1,110 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.example.app</groupId>
+  <artifactId>my-app</artifactId>
+
+  <packaging>pom</packaging>
+  <modules>
+    <module>child1</module>
+    <module>child2</module>
+  </modules>
+  <version>1.0-SNAPSHOT</version>
+  <name>my-app</name>
+  <url>http://maven.apache.org</url>
+
+  <repositories>
+
+    <repository>
+      <id>owasp</id>
+      <name>OWASP Repository</name>
+      <url>https://oss.sonatype.org/content/repositories/releases/</url>
+    </repository>
+
+    <repository>
+    <id>lightbend</id>
+    <url>https://repo.typesafe.com/typesafe/releases/</url>
+  </repository>
+  </repositories>
+
+  <dependencies>
+
+    <dependency>
+      <groupId>com.typesafe</groupId>
+      <artifactId>config</artifactId>
+      <version>1.4.3</version>
+    </dependency>
+
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>3.8.1</version>
+      <scope>test</scope>
+    </dependency>
+
+<!--   ==================================================== Q4  Starts ==================================================== -->
+
+    <!-- 1. Compile Scope (Default) -->
+    <!-- Available in compile, runtime, and test -->
+    <dependency>
+      <groupId>com.google.code.gson</groupId>
+      <artifactId>gson</artifactId>
+      <version>2.10.1</version>
+      <!-- scope is optional; default is compile -->
+    </dependency>
+
+    <!-- 2. Runtime Scope -->
+    <!-- Not needed at compile time, but needed during execution -->
+<!--    <dependency>-->
+<!--      <groupId>mysql</groupId>-->
+<!--      <artifactId>mysql-connector-java</artifactId>-->
+<!--      <scope>runtime</scope>-->
+<!--    </dependency>-->
+
+    <!-- 3. Test Scope -->
+    <!-- Only available during testing (not included in final JAR) -->
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>3.8.1</version>
+      <scope>test</scope>
+    </dependency>
+
+    <!-- 4. Provided Scope -->
+    <!-- Required for compile, but provided by the container (e.g., servlet) -->
+<!--    <dependency>-->
+<!--      <groupId>javax.servlet</groupId>-->
+<!--      <artifactId>javax.servlet-api</artifactId>-->
+<!--      <scope>provided</scope>-->
+<!--    </dependency>-->
+
+<!-- ==================================================== Q4 Ends ====================================================  -->
+
+  </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-jar-plugin</artifactId>
+        <configuration>
+          <archive>
+            <manifest>
+              <addClasspath>true</addClasspath>
+              <mainClass>com.example.app.App</mainClass>
+            </manifest>
+          </archive>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+          <source>21</source>     <!-- or 17, if you're using Java 17 -->
+          <target>21</target>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>
