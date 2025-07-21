@@ -1,0 +1,24 @@
+Ques1. Create a sample Spring Boot application and configure H2 in-memory database dependency.
+Solution: Please check pom.xml and resources/application.properties
+
+Ques2. Configure few properties under application.properties file and read their value under Main class.
+Solution: Please check resources/application.properties and AssignmentApplication.java
+
+Ques3. Create an Employee table (id, name, designation) under H2 database and insert a few sample records under that table at startup.
+Solution:
+
+Ques4. Enable actuator services and play around with a few endpoints it exposes.
+Solution: Please check pom.xml and application.properties
+Observations:
+(i) Actuator helps me monitor my Spring Boot app very easily.
+(ii) I can check health, metrics, and bean details just by hitting URLs like /actuator/health or /actuator/beans.
+(iii) It's useful for debugging and understanding what's going on inside the application without writing extra code.
+(iv) Also, enabling only specific endpoints in application.properties gave me full control over what I expose.
+
+Ques5. Enable devtools and play around by making changes.
+Solution: Please check pom.xml
+Observations:
+(i) DevTools saves a lot of time during development.
+(ii) Whenever I make a change in code or properties, the app automatically restarts and I can instantly see the effect.
+(iii) I didn’t need to manually stop and rerun the application every time, which improved my productivity.
+(iv) Also, it kept the data in H2 in-memory database during restart which was very convenient for quick testing.
