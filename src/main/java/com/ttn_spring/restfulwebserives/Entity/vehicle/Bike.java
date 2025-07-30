@@ -7,4 +7,12 @@ import jakarta.persistence.Entity;
 @DiscriminatorValue("BIKE")
 public class Bike extends Vehicle {
     private String handleType;
+
+    public String getHandleType() {
+        return handleType;
+    }
+
+    public void setHandleType(String handleType) {
+        this.handleType = handleType;
+    }
 }
