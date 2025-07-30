@@ -1,0 +1,11 @@
+Question 9-Which method on the session object can be used to remove an object from the cache?
+Answer -session.evict(object);   // Removes one object from first-level cache
+        session.clear();         // Clears whole first-level cache
+
+Question 10- @Transactional Explain.
+Answer -
+    Used on methods where DB interaction should be atomic.
+
+    Either all changes persist, or if an error occurs → everything rolls back.
+
+    Used in AuthorService to save all mappings together (cascade save).
